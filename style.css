@@ -1,0 +1,130 @@
+* {
+    box-sizing: border-box;
+}
+
+header {
+    background-color: black;
+    height: auto;
+    width: 100%;
+    border-bottom: 10px solid #494448;
+    margin-top: -5px;
+}
+
+#header-background {
+    background-position: right;
+    background:url('/pics/54151.jpg'); 
+    width: auto;
+    height: auto;
+}
+
+#logo {
+    max-width: 150px;
+}
+
+#header-text {
+    margin: 0px;
+    padding: 5px;
+    verticle-align: top;
+    text-align: left;
+    background-color: black;
+    color: tan;
+    font-family: mooli;
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+}
+
+#header-text1 {
+    margin: 0;
+    padding: 5px;
+    color:tan;
+    font-family: mooli;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 30px;
+} 
+
+body {
+    color: black;
+}
+
+.border {
+    border-top: 10px solid #494448;
+    border-right: 10px solid #494448;
+    border-bottom: 10px solid #494448;
+    border-left: 10px solid #494448;
+}
+/* Add responsiveness - will automatically display the navbar vertically instead of horizontally on screens less than 500 pixels */
+@media screen and (max-width: 480px) {
+    .navbar {
+        float: none;
+        display: inline-block;
+    }
+}
+
+/* making it mobile friendly */
+img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+@media all and (min-width: 768px) {
+    .content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+aside.left {
+    background-color: grey;
+    padding: 5px;
+    width: 200px;
+    border-right: 5px solid #494448;
+    order: 1;
+    flex: 1;
+}
+
+.main {
+    flex: 4;
+    order: 2;
+    width: auto;
+    min-height: 100vh;
+    background-color: #56CFF3;
+    padding: 5px;
+}
+
+.box {
+    background-color: #ADB0B0;
+    border: 5px solid #494448;
+    padding: 5px;
+}
+
+.box1 {
+    background-color: #ADB0B0;
+    border: 5px solid #494448;
+    padding: 5px;
+}
+
+.box2 {
+    background-color: #ADB0B0;
+    border: 5px solid #494448;
+    padding: 5px;
+}
+
+.box3 {
+    background-color: #56CFF3;
+}
+
+footer {
+    background-color: black;
+    color: tan;
+    width: 100%;
+    border-top: 10px solid #494448;
+    order: 3;
+}
