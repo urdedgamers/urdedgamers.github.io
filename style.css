@@ -72,6 +72,7 @@ img {
 .content {
     display: flex;
     flex-direction: column;
+    padding: 10px;
 }
 
 @media all and (min-width: 768px) {
@@ -83,7 +84,7 @@ img {
 
 aside.left {
     background-color: grey;
-    padding: 5px;
+    padding: 10px;
     width: 200px;
     border-right: 5px solid #494448;
     order: 1;
@@ -96,13 +97,13 @@ aside.left {
     width: auto;
     min-height: 100vh;
     background-color: #56CFF3;
-    padding: 5px;
+    padding: 10px;
 }
 
 .box {
     background-color: #ADB0B0;
     border: 5px solid #494448;
-    padding: 5px;
+    padding: 10px;
 }
 
 .box1 {
@@ -114,7 +115,7 @@ aside.left {
 .box2 {
     background-color: #ADB0B0;
     border: 5px solid #494448;
-    padding: 5px;
+    padding: 10px;
 }
 
 .box3 {
