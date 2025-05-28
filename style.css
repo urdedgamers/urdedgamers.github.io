@@ -72,7 +72,8 @@ img {
 .content {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 5px;
+    color: grey;
 }
 
 @media all and (min-width: 768px) {
@@ -97,7 +98,8 @@ aside.left {
     width: auto;
     min-height: 100vh;
     background-color: #56CFF3;
-    padding: 20px;
+    padding: 5px;
+    color: grey;
 }
 
 .box {
