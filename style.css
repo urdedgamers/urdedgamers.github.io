@@ -3,7 +3,7 @@
 }
 
 header {
-    background-color: grey;
+    background-color: #3f3b3a;
     height: auto;
     width: 100%;
     border-bottom: 10px solid #494448;
@@ -19,6 +19,7 @@ header {
 
 #logo {
     max-width: 150px;
+    position: center;
 }
 
 #header-text {
