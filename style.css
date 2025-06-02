@@ -12,7 +12,7 @@ header {
 
 #header-background {
     background-position: right;
-    background:url('/pics/54151.jpg'); 
+  /*  background:url('/pics/54151.jpg'); */
     width: auto;
     height: auto;
 }
