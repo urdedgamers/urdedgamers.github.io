@@ -37,6 +37,7 @@ header {
 #header-text1 {
     margin: 0;
     padding: 5px;
+    verticle-align: center;
     color:tan;
     font-family: mooli;
     font-weight: normal;
