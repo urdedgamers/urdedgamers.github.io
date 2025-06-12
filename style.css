@@ -23,16 +23,9 @@ header {
 }
 
 #header-text {
-    margin: 0px;
-    padding: 5px;
-    verticle-align: top;
-    text-align: left;
+    verticle-align: center;
+    text-align: center;
     background-color: black;
-    color: tan;
-    font-family: mooli;
-    font-weight: bold;
-    font-style: italic;
-    font-size: 50px;
 }
 
 #header-text1 {
