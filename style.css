@@ -12,7 +12,7 @@ header {
 
 #header-background {
     background-position: center;
-    background:url('/pics/UGtext4.gif"');
+    /* background:url('/pics/UGtext4.gif"'); */
     width: auto;
     height: auto;
 }
