@@ -131,6 +131,8 @@ src="https://www.youtube.com/embed/kp4DK1GkPnU?si=MkrBbx5Aga7lSDKj">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-rss/3.3.0/jquery.rss.min.js"></script>
 
   <script>
+    const feedUrl = "https://tinyurl.com/urdedgamersnewsfeed";  // ← replace this with the URL you got
+    
     // Template with image + title + description + source label
     const templateWithSource = `
       <div class="news-item">
@@ -154,7 +156,7 @@ src="https://www.youtube.com/embed/kp4DK1GkPnU?si=MkrBbx5Aga7lSDKj">
     `;
 
     // Combined feed (replace with your RSSMix URL)
-    $("#combined").rss("https://tinyurl.com/urdedgamersnewsfeed", {
+    $("#combined").rss(feedURL, {
       limit: 6,
       entryTemplate: templateWithSource
     });
