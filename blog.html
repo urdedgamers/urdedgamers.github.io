@@ -133,11 +133,11 @@ document.getElementById("comment-form").addEventListener("submit", e => {
   fetch(`${SUPABASE_URL}/rest/v1/comments`, {
     method: "POST",
     headers,
-    body: JSON.stringify({
-      slug,
-      name,
-      message
-    })
+  body: JSON.stringify({
+  post_id: slug,
+  name: form.name.value,
+  body: form.message.value
+})
   }).then(() => {
     alert("Comment submitted for approval.");
     form.reset();
