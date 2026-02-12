@@ -66,28 +66,116 @@
    
       <p> Ins and outs of playing old single player FPS games on Windows 11.</p><br>
     
-      <p>Just taking a look at what you can do to get old single player games to run on Windows 11.<br><br>
+      <p>Just taking a look at what you can do to get old single player games to run on Windows 11.<br><br><hr>
         <strong>Call of Duty, Call of Duty UO and Call of Duty 2 </strong><br><br>
             <img src="/pics/CoD1Cover.jpg">
     <br><br>
-     <div>   These games the pc did read the disks but didn't always run them. Usually if it was hung up I could just pop the disk out and right back in and it would run. If it didn't then I would go to the Windows menu and right click the disk drive the game disk was in and click autorun and it would run, just have to keep messing with it until you get all the disks installed.<br> Then after all the messing around the game wouldn't start, multiplayer yes, single player nope. <br> From what I understand is Windows stopped supporting the disk security on these old games years ago.<br> So the easiest fix is using a fixed .exe that replaces the .exe for the single player game. Just save the original .exe somewhere in case you need it later.<br> I grabbed the .exe from <a href="https://gamecopyworld.com/games/pc_call_of_duty.shtml">GameCopyWorld</a><br> Everything I downloaded from there I scanned and it was all clean, probably wouldn't hurt to scan the files first before unzipping them. Speaking of unzipping the files you'll have to use RAR or something that can unzip them because the Windows zip utility will fail at unzipping the files saying something is wrong with them. There isn't anything wrong with them it's just Windows rejecting them.<br> Once you get the fixed .exe in place make a shortcut on your desktop for it and I did set the new shortcut to run in compatibility mode and as an administrator just in case. After that you should be good to go. Enjoy.<br><br><hr></div>
+     <div>   These games the pc did read the disks but didn't always run them. Usually if it was hung up I could just pop the disk out and right back in and it would run. If it didn't then I would go to the Windows menu and right click the disk drive the game disk was in and click autorun and it would run, just have to keep messing with it until you get all the disks installed.<br> Then after all the messing around the game wouldn't start, multiplayer yes, single player nope. <br> From what I understand is Windows stopped supporting the disk security on these old games years ago.<br> So the easiest fix is using a fixed .exe that replaces the .exe for the single player game. Just save the original .exe somewhere in case you need it later.<br> I grabbed the .exe from <a href="https://gamecopyworld.com/games/pc_call_of_duty.shtml">GameCopyWorld</a><br> Everything I downloaded from there I scanned and it was all clean, probably wouldn't hurt to scan the files first before unzipping them. Speaking of unzipping the files you'll have to use RAR or something that can unzip them because the Windows zip utility will fail at unzipping the files saying something is wrong with them. There isn't anything wrong with them it's just Windows rejecting them.<br> Once you get the fixed .exe in place make a shortcut on your desktop for it and I did set the new shortcut to run in compatibility mode and as an administrator just in case. After that you should be good to go. Enjoy.<br>
+  <section id="comments">
+  <h3>Comments</h3>
+  <div id="comment-list"></div>
+
+  <form id="comment-form">
+    <input type="text" name="name" placeholder="Name" required>
+    <textarea name="message" placeholder="Comment" required></textarea>
+
+    <!-- Honeypot (hidden bot trap) -->
+    <input type="text" name="website" style="display:none">
+
+    <button type="submit">Post Comment</button>
+  </form>
+</section>
+
+<script>
+const SUPABASE_URL = "https://zzkpinctabgkhpvcahyn.supabase.co";
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inp6a3BpbmN0YWJna2hwdmNhaHluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA4NDAxNzAsImV4cCI6MjA4NjQxNjE3MH0.MQ6oiz3v0QUjhLqhVjtoZTnyjCBJLr0KW3uM3j3Fp6U";
+
+const slug = window.location.pathname;
+
+const headers = {
+  "Content-Type": "application/json",
+  "apikey": SUPABASE_KEY,
+  "Authorization": `Bearer ${SUPABASE_KEY}`
+};
+
+// Load approved comments
+fetch(`${SUPABASE_URL}/rest/v1/comments?slug=eq.${slug}&approved=eq.true&order=created_at.asc`, {
+  headers
+})
+.then(res => res.json())
+.then(data => {
+  const list = document.getElementById("comment-list");
+  data.forEach(c => {
+    list.innerHTML += `
+      <div class="comment">
+        <strong>${escapeHtml(c.name)}</strong>
+        <p>${escapeHtml(c.message)}</p>
+      </div>
+    `;
+  });
+});
+
+// Submit comment
+document.getElementById("comment-form").addEventListener("submit", e => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  // Honeypot check
+  if (form.website.value) return;
+
+  const name = form.name.value.trim();
+  const message = form.message.value.trim();
+
+  // Basic spam filter
+  if (message.length < 3 || message.length > 2000) return;
+
+  fetch(`${SUPABASE_URL}/rest/v1/comments`, {
+    method: "POST",
+    headers,
+    body: JSON.stringify({
+      slug,
+      name,
+      message
+    })
+  }).then(() => {
+    alert("Comment submitted for approval.");
+    form.reset();
+  });
+});
+
+// Prevent XSS
+function escapeHtml(text) {
+  return text.replace(/[&<>"']/g, function(m) {
+    return ({
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    })[m];
+  });
+}
+</script>
+<br><br><hr></div>
       
       <strong>Medal of Honor Pacific Assault and Medal of Honor Airborne </strong><br><br>            
         <img src="/pics/170932-medal-of-honor-pacific-assault-windows-front-cover-431236893_1.jpg"><br><br>
       The Medal of Honor games I had a hard time getting Windows to read the disks at all. In the end it was easier to copy the disk(s) to a folder on the desktop and running the setup file from there. That may be the easier way to run any of the old single player games that way. You still have to grab a fixed .exe file from <a href="https://gamecopyworld.com/games/pc_medal_of_honor_pacific_assault.shtml">GameCopyWorld</a><br>
       I would follow the same procedure as above to get your shortcut set and once done, play away.<br><br>
-      <strong>Far Cry 1 </strong><br><br>
+      <strong>Far Cry 1 </strong><br><br><hr>
+        
       <img src="/pics/Far_Cry_1.jpg"><br><br>
       Far Cry did install ok but once installed wasn't very playable. The graphics, colors in particular weren't rendering correctly so it was hard to see where you were going at times. <br>
       So after some looking around found that as long as you didn't update the game you can install a 64 bit patch which upgrades the game in many ways and makes it so you can run it on Windows 11.<br>
       You can find the patch and all information about it <a href="https://community.pcgamingwiki.com/files/file/442-far-cry-amd64-64-bit-upgrade-patch/">HERE</a><br>
-      You won't need a fixed .exe, just use the 64 bit shortcut but still set it to compatibility mode and run as an administrator. After that you should be set.<br><br>
+      You won't need a fixed .exe, just use the 64 bit shortcut but still set it to compatibility mode and run as an administrator. After that you should be set.<br><br><hr>
 
        <strong>Battlefield - Bad Company and Battlefield - Bad Company 2 </strong><br><br>
       <img src="/pics/BadCompany2.jpg"><br><br>
         Well I can't find my Bad Company game but was able to play Bad Company 2.<br> This game did install ok and I found that if you update it with patch Client R 11 it removes the disk check.<br>
         As always I would do a scan on any files downloaded from the internet. After the patch was installed, no issues.<br>
-        You can find the patch <a href="https://archive.org/details/bfbc-2-pc-client-r-11-795745-patch">HERE</a><br><br>
+        You can find the patch <a href="https://archive.org/details/bfbc-2-pc-client-r-11-795745-patch">HERE</a><br><br><hr>
       </p>
       <p>Have a question? Discussions are now active and you can find them  <a href="https://github.com/urdedgamers/urdedgamers.github.io/discussions" target="_blank">HERE</a><br>
       Will eventually have them integrated into the pages, that's the plan anyways.</p>
