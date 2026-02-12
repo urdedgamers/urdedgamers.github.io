@@ -158,6 +158,17 @@ aside.left {
     background-color: #56CFF3;
 }
 
+#comment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.comment {
+  width: 100%;
+}
+
+
 footer {
     background-color: black;
     color: tan;
