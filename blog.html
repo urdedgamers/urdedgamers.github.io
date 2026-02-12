@@ -98,20 +98,36 @@ const headers = {
 
 // Load approved comments
 fetch(`${SUPABASE_URL}/rest/v1/comments?slug=eq.${slug}&approved=eq.true&order=created_at.asc`, {
-  headers
+    headers: {
+        ...headers,
+        "Accept": "application/json"
+    }
 })
 .then(res => res.json())
 .then(data => {
-  const list = document.getElementById("comment-list");
-  data.forEach(c => {
-    list.innerHTML += `
-      <div class="comment">
-        <strong>${escapeHtml(c.name)}</strong>
-        <p>${escapeHtml(c.message)}</p>
-      </div>
-    `;
-  });
-});
+    const list = document.getElementById("comment-list");
+    if (!list) return;
+
+    // Clear existing content safely
+    list.innerHTML = "";
+
+    // Create a document fragment for better performance
+    const fragment = document.createDocumentFragment();
+
+    data.forEach(c => {
+        const commentDiv = document.createElement("div");
+        commentDiv.className = "comment";
+        commentDiv.innerHTML = `
+            <strong>${escapeHtml(c.name)}</strong>
+            <p>${escapeHtml(c.message)}</p>
+        `;
+        fragment.appendChild(commentDiv);
+    });
+
+    // Append all at once
+    list.appendChild(fragment);
+})
+.catch(err => console.error("Error loading comments:", err));
 
 // Submit comment
 document.getElementById("comment-form").addEventListener("submit", e => {
