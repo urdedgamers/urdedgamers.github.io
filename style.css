@@ -197,3 +197,250 @@ footer {
     border-top: 10px solid #494448;
     order: 3;
 }
+
+/* ===== Performance Optimizations ===== */
+
+/* Critical CSS inlining */
+body {
+  font-display: swap;
+}
+
+/* Optimize images */
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Reduce paint on scroll */
+* {
+  will-change: transform;
+}
+
+/* Optimize animations */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Optimize iframes for better performance */
+iframe {
+  loading: lazy;
+  aspect-ratio: 16/9;
+}
+/* ===== Mobile Optimizations ===== */
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .keyboard-nav {
+        top: 5px;
+        left: 1rem;
+    }
+    
+    .skip-navigation {
+        left: 1rem;
+    }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        order: 2;
+    }
+    
+    main {
+        order: 1;
+        width: 100%;
+    }
+}
+
+/* Touch Targets */
+button, a, input, textarea, select {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Typography */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Responsive Tables */
+@media (max-width: 768px) {
+    table {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: #333;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+    
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #333;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .mobile-menu a {
+        display: block;
+        padding: 10px 0;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid #555;
+    }
+    
+    .mobile-menu a:hover {
+        background: #555;
+    }
+}
+/* ===== Mobile Optimizations ===== */
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .keyboard-nav {
+        top: 5px;
+        left: 1rem;
+    }
+    
+    .skip-navigation {
+        left: 1rem;
+    }
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .content {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        order: 2;
+    }
+    
+    main {
+        order: 1;
+        width: 100%;
+    }
+}
+
+/* Touch Targets */
+button, a, input, textarea, select {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+/* Responsive Images */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive Typography */
+@media (max-width: 480px) {
+    body {
+        font-size: 16px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+}
+
+/* Mobile Menu */
+.mobile-menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        background: #333;
+        color: #fff;
+        padding: 10px;
+        border-radius: 5px;
+        z-index: 1000;
+    }
+    
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 60px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: #333;
+        padding: 20px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    }
+    
+    .mobile-menu a {
+        display: block;
+        padding: 10px 0;
+        color: #fff;
+        text-decoration: none;
+        border-bottom: 1px solid #555;
+    }
+    
+    .mobile-menu a:hover {
+        background: #555;
+    }
+}
