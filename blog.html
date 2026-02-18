@@ -25,7 +25,15 @@
     <header>
     <div id="header-background">
     <div id="header-text">
-    <img src="/pics/UGtext4.gif">
+    
+                param(
+                    [string]$match = $args[0]
+                )
+                if ($match -notmatch 'alt=') {
+                    return $match -replace '(src="([^"]+)")', 'src="<img src="<img src="/pics/UGtext4.gif"" loading="lazy" decoding="async"" alt="Urdedgamers image" loading="lazy" decoding="async"'
+                }
+                return $match
+            
     </div>
     </div>
     </header>
@@ -58,7 +66,15 @@
       
   <body>
     <div class="main">
-     <img src="/pics/ugbig.jpg" id="logo"><br><br>
+     
+                param(
+                    [string]$match = $args[0]
+                )
+                if ($match -notmatch 'alt=') {
+                    return $match -replace '(src="([^"]+)")', 'src="<img src="<img src="/pics/ugbig.jpg"" loading="lazy" decoding="async" id="logo"" alt="Urdedgamers image" loading="lazy" decoding="async"'
+                }
+                return $match
+            <br><br>
     <h1>Urdedgamers Blog</h1>
     <p>Urdedgamers: In case anyone was wondering, we always pronounced it = yer dead gamers.</p><br><br>
    
@@ -66,31 +82,55 @@
     
       <p>Just taking a look at what you can do to get old single player games to run on Windows 11.<br><br><hr>
         <strong>Call of Duty, Call of Duty UO and Call of Duty 2 </strong><br><br>
-            <img src="/pics/CoD1Cover.jpg">
+            
+                param(
+                    [string]$match = $args[0]
+                )
+                if ($match -notmatch 'alt=') {
+                    return $match -replace '(src="([^"]+)")', 'src="<img src="<img src="/pics/CoD1Cover.jpg"" loading="lazy" decoding="async"" alt="Urdedgamers image" loading="lazy" decoding="async"'
+                }
+                return $match
+            
     <br><br>
      <div>   These games the pc did read the disks but didn't always run them. Usually if it was hung up I could just pop the disk out and right back in and it would run. If it didn't then I would go to the Windows menu and right click the disk drive the game disk was in and click autorun and it would run, just have to keep messing with it until you get all the disks installed.<br> Then after all the messing around the game wouldn't start, multiplayer yes, single player nope. <br> From what I understand is Windows stopped supporting the disk security on these old games years ago.<br> So the easiest fix is using a fixed .exe that replaces the .exe for the single player game. Just save the original .exe somewhere in case you need it later.<br> I grabbed the .exe from <a href="https://gamecopyworld.com/games/pc_call_of_duty.shtml">GameCopyWorld</a><br> Everything I downloaded from there I scanned and it was all clean, probably wouldn't hurt to scan the files first before unzipping them. Speaking of unzipping the files you'll have to use RAR or something that can unzip them because the Windows zip utility will fail at unzipping the files saying something is wrong with them. There isn't anything wrong with them it's just Windows rejecting them.<br> Once you get the fixed .exe in place make a shortcut on your desktop for it and I did set the new shortcut to run in compatibility mode and as an administrator just in case. After that you should be good to go. Enjoy.<br>
 <br><hr></div>
       
       <strong>Medal of Honor Pacific Assault and Medal of Honor Airborne </strong><br><br>            
-        <img src="/pics/170932-medal-of-honor-pacific-assault-windows-front-cover-431236893_1.jpg"><br><br>
+        
+                param(
+                    [string]$match = $args[0]
+                )
+                if ($match -notmatch 'alt=') {
+                    return $match -replace '(src="([^"]+)")', 'src="<img src="<img src="/pics/170932-medal-of-honor-pacific-assault-windows-front-cover-431236893_1.jpg"" loading="lazy" decoding="async"" alt="Urdedgamers image" loading="lazy" decoding="async"'
+                }
+                return $match
+            <br><br>
       The Medal of Honor games I had a hard time getting Windows to read the disks at all. In the end it was easier to copy the disk(s) to a folder on the desktop and running the setup file from there. That may be the easier way to run any of the old single player games that way. You still have to grab a fixed .exe file from <a href="https://gamecopyworld.com/games/pc_medal_of_honor_pacific_assault.shtml">GameCopyWorld</a><br>
       I would follow the same procedure as above to get your shortcut set and once done, play away.<br> 
  <br><hr>
      
       <strong>Far Cry 1 </strong><br><br>       
-      <img src="/pics/Far_Cry_1.jpg"><br><br>
+      
+                param(
+                    [string]$match = $args[0]
+                )
+                if ($match -notmatch 'alt=') {
+                    return $match -replace '(src="([^"]+)")', 'src="<img src="<img src="/pics/Far_Cry_1.jpg"" loading="lazy" decoding="async"" alt="Urdedgamers image" loading="lazy" decoding="async"'
+                }
+                return $match
+            <br><br>
       Far Cry did install ok but once installed wasn't very playable. The graphics, colors in particular weren't rendering correctly so it was hard to see where you were going at times. <br>
       So after some looking around found that as long as you didn't update the game you can install a 64 bit patch which upgrades the game in many ways and makes it so you can run it on Windows 11.<br>
       You can find the patch and all information about it <a href="https://community.pcgamingwiki.com/files/file/442-far-cry-amd64-64-bit-upgrade-patch/">HERE</a><br>
       You won't need a fixed .exe, just use the 64 bit shortcut but still set it to compatibility mode and run as an administrator. After that you should be set.<br>  
  
   <br><hr>    
-  <!-- Giscus Comments -->
-<script src="https://giscus.app/client.js"
-        data-repo="urdedgamers/urdedgamers.github.io"
-        data-repo-id="R_kgDONWQUWQ"
+   <!-- Giscus Comments -->
+  <script src="https://giscus.app/client.js"
+        data-repo="CraterToneFX/cratertonefx.github.io"
+        data-repo-id="R_kgDOROYTiw"
         data-category="Announcements"
-        data-category-id="DIC_kwDONWQUWc4Crve8"
+        data-category-id="DIC_kwDOROYTi84C2uYe"
         data-mapping="pathname"
         data-strict="0"
         data-reactions-enabled="1"
@@ -103,10 +143,19 @@
         async>
 </script>
 
+
  <br><br><hr>
       </p>
 
-      <img src="/pics/ug.jpg"><br><br>
+      
+                param(
+                    [string]$match = $args[0]
+                )
+                if ($match -notmatch 'alt=') {
+                    return $match -replace '(src="([^"]+)")', 'src="<img src="<img src="/pics/ug.jpg"" loading="lazy" decoding="async"" alt="Urdedgamers image" loading="lazy" decoding="async"'
+                }
+                return $match
+            <br><br>
 
       <p>Steam profile <a href="https://steamcommunity.com/id/urded" target="_blank"><i class="fa  fa-steam-square"></i></a><br>
       Reddit profile <a href="https://www.reddit.com/user/LinuxRox2/" target="_blank"><i class="fa   fa-reddit-alien"></i></a></p><br>
