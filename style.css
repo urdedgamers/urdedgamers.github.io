@@ -1,0 +1,198 @@
+/* ==========================================================================
+   URDEDGAMERS ARCHIVE - RETRO TACTICAL STYLESHEET
+   ========================================================================== */
+
+/* Google Fonts Import - Clean modern headliner + highly readable monospace */
+@import url('https://googleapis.com');
+
+:root {
+  /* Color Palette - Military UI Terminal */
+  --bg-main: #111411;       /* Deep warm charcoal/olive black */
+  --bg-card: #181d18;       /* Tactical dark green-gray for containers */
+  --bg-hover: #222922;      /* Lighter tint for interactive hover states */
+  --text-primary: #e2e8f0;  /* Crisp light gray for premium legibility */
+  --text-muted: #8a998a;    /* Faded olive gray for secondary metadata */
+  --accent-glow: #4af626;   /* Classic neon night-vision green */
+  --accent-warn: #ffb000;   /* Tactical HUD amber/orange */
+  --border-color: #2f3b2f;  /* Low contrast structural borders */
+  
+  /* Fonts */
+  --font-display: 'Share Tech Mono', monospace;
+  --font-body: 'Space Grotesk', sans-serif;
+}
+
+/* Global Reset & Base Setup */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  padding-bottom: 40px;
+}
+
+/* Base Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-primary);
+}
+
+h1 { font-size: 2.5rem; color: var(--accent-glow); margin-bottom: 0.5rem; }
+h2 { font-size: 1.8rem; margin-bottom: 1.5rem; border-bottom: 2px solid var(--border-color); padding-bottom: 0.3rem; }
+h3 { font-size: 1.3rem; margin-bottom: 1rem; color: var(--accent-warn); }
+
+p {
+  margin-bottom: 1.2rem;
+  max-width: 75ch; /* Keeps text lines at comfortable reading length */
+}
+
+/* Links & Buttons */
+a {
+  color: var(--accent-glow);
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* Layout Structure */
+header {
+  background: linear-gradient(180deg, rgba(24,29,24,1) 0%, rgba(17,20,17,1) 100%);
+  border-bottom: 1px solid var(--border-color);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+nav {
+  background-color: var(--bg-card);
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.8rem;
+  font-family: var(--font-display);
+}
+
+nav a {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  padding: 0.2rem 0.6rem;
+  border-radius: 3px;
+}
+
+nav a:hover {
+  background-color: var(--bg-hover);
+  color: var(--accent-glow);
+}
+
+main, .container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Sections & Grid Architecture */
+section {
+  margin-bottom: 3.5rem;
+}
+
+/* Grid layout for your mod lists, blog snippets, and external links */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+/* Content Blocks (Cards) */
+.card, article, .block {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-left: 4px solid var(--accent-warn); /* Tactical accent stripe */
+  border-radius: 4px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover, article:hover, .block:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent-glow);
+}
+
+.card-meta {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Specialized UI Elements */
+.badge {
+  display: inline-block;
+  background-color: rgba(74, 246, 38, 0.1);
+  border: 1px solid var(--accent-glow);
+  color: var(--accent-glow);
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  padding: 0.1rem 0.5rem;
+  border-radius: 2px;
+  text-transform: uppercase;
+  margin-right: 0.5rem;
+}
+
+/* Heavy prominence container specifically for CraterToneFX promotion */
+.promo-box {
+  background: linear-gradient(135deg, #1f1810 0%, #181d18 100%);
+  border: 1px dashed var(--accent-warn);
+  border-radius: 4px;
+  padding: 2rem;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--accent-warn);
+  color: var(--bg-main) !important;
+  font-family: var(--font-display);
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 0.6rem 1.5rem;
+  border-radius: 3px;
+  margin-top: 1rem;
+}
+
+.btn-cta:hover {
+  background-color: #ffca54;
+  box-shadow: 0 0 12px var(--accent-warn);
+  text-shadow: none;
+}
+
+/* Footer rules */
+footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: 4rem;
+}
+
+/* Mobile Responsive Optimization */
+@media (max-width: 600px) {
+  h1 { font-size: 1.8rem; }
+  nav { flex-direction: column; text-align: center; gap: 0.5rem; }
+  main { margin: 1rem auto; }
+}
