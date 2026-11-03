@@ -196,3 +196,21 @@ footer {
   nav { flex-direction: column; text-align: center; gap: 0.5rem; }
   main { margin: 1rem auto; }
 }
+
+/* Center alignment utility */
+.center-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2rem auto;
+}
+
+/* Ensure standalone images centered inside it don't overflow */
+.center-content img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
