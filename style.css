@@ -214,3 +214,8 @@ footer {
   margin-bottom: 1rem;
 }
 
+.box {
+   text-align: center;
+   margin: 2rem auto;
+} 
+
