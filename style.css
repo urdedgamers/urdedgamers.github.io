@@ -305,3 +305,35 @@ footer {
   border: 1px solid var(--border-color);
   margin: 1.5rem 0;
 }
+
+/* Styling the interactive tactical download button */
+a.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* Adds clean spacing between your FontAwesome icon and text */
+  background-color: #181d18; /* Solid tactical dark background */
+  color: #52ff2e !important;  /* High-contrast neon night-vision green text */
+  border: 1px solid #4af626; /* Crisp neon green border */
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  font-family: var(--font-display, monospace);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Button Hover State */
+a.btn:hover {
+  background-color: #4af626; /* Button flips to solid neon green background */
+  color: #111411 !important;  /* Text flips to deep charcoal dark text for maximum legibility */
+  box-shadow: 0 0 15px rgba(74, 246, 38, 0.6); /* Vibrant night-vision glow effect */
+  text-shadow: none !important;
+}
+
+/* Clean up icon spacing */
+a.btn i {
+  font-size: 1rem;
+}
