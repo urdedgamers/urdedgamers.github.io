@@ -337,3 +337,31 @@ a.btn:hover {
 a.btn i {
   font-size: 1rem;
 }
+
+/* Side-by-Side Screenshot Container */
+.screenshot-gallery {
+  display: flex;
+  gap: 15px;            /* Adds a clean gap between the two images */
+  margin: 1.5rem 0;     /* Spacing above and below the gallery block */
+  width: 100%;
+}
+
+/* Ensure the images scale perfectly to occupy half the container each */
+.screenshot-gallery img {
+  flex: 1;              /* Forces both images to take up equal width */
+  width: 50%;           /* Standard base width */
+  max-width: 100%;
+  height: auto;         /* Maintains original image aspect ratio */
+  border: 1px solid var(--border-color, #2f3b2f);
+  border-radius: 4px;
+}
+
+/* Mobile Responsive Fix - Stacks images vertically on small screens */
+@media (max-width: 600px) {
+  .screenshot-gallery {
+    flex-direction: column;
+  }
+  .screenshot-gallery img {
+    width: 100%;
+  }
+}
