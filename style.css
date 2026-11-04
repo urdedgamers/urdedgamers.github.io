@@ -338,30 +338,28 @@ a.btn i {
   font-size: 1rem;
 }
 
-/* Side-by-Side Screenshot Container */
+/* Centered layout container for the 300x225 screenshot pairs */
 .screenshot-gallery {
   display: flex;
-  gap: 15px;            /* Adds a clean gap between the two images */
-  margin: 1.5rem 0;     /* Spacing above and below the gallery block */
+  justify-content: center; /* Horizontally centers the pair on your page */
+  gap: 15px;               /* Adds a clean tactical gap between them */
+  margin: 2rem auto;       /* Uniform spacing above and below */
   width: 100%;
 }
 
-/* Ensure the images scale perfectly to occupy half the container each */
+/* Force both images inside to lock strictly to 300x225 dimensions */
 .screenshot-gallery img {
-  flex: 1;              /* Forces both images to take up equal width */
-  width: 50%;           /* Standard base width */
-  max-width: 100%;
-  height: auto;         /* Maintains original image aspect ratio */
+  width: 300px !important;
+  height: 225px !important;
+  object-fit: cover;       /* Prevents distortion if the original files are slightly different sizes */
   border: 1px solid var(--border-color, #2f3b2f);
   border-radius: 4px;
 }
 
-/* Mobile Responsive Fix - Stacks images vertically on small screens */
-@media (max-width: 600px) {
+/* Mobile Responsive adjustment - keeps them looking great on phones */
+@media (max-width: 650px) {
   .screenshot-gallery {
     flex-direction: column;
-  }
-  .screenshot-gallery img {
-    width: 100%;
+    align-items: center;   /* Keeps them centered stacked vertically */
   }
 }
