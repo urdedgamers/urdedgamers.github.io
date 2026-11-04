@@ -343,7 +343,7 @@ a.btn i {
   display: flex;
   justify-content: flex-start; /* ⬅️ This snaps the pair perfectly to the left */
   gap: 15px;               /* Adds a clean tactical gap between them */
-  margin: 2rem auto;       /* Uniform spacing above and below */
+  margin: 2rem 0;       /* Uniform spacing above and below */
   width: 100%;
 }
 
